@@ -3,6 +3,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import sort.BubbleSort;
+import sort.SelectionSort;
 
 /**
  * author yg
@@ -17,9 +18,16 @@ public class SortTest {
     }
 
     @Test
-    public void test() {
+    public void testBubble() {
         int[] ints = getRandomArray();
         BubbleSort.sort(ints);
+        check(ints);
+    }
+
+    @Test
+    public void testSelection() {
+        int[] ints = getRandomArray();
+        SelectionSort.sort(ints);
         check(ints);
     }
 
