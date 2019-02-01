@@ -2,7 +2,7 @@ package sort;
 
 /**
  * author yg
- * description 快速排序
+ * description 选择排序
  * date 2019/1/26
  */
 public class SelectionSort {
