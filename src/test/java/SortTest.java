@@ -3,6 +3,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import sort.BubbleSort;
+import sort.MergeSort;
 import sort.SelectionSort;
 
 /**
@@ -29,6 +30,13 @@ public class SortTest {
         int[] ints = getRandomArray();
         SelectionSort.sort(ints);
         check(ints);
+    }
+
+    @Test
+    public void testMerge() {
+        int[] ints = getRandomArray();
+        int[] sort = MergeSort.sort(ints);
+        check(sort);
     }
 
     private int[] getRandomArray() {
