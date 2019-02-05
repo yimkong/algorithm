@@ -7,6 +7,8 @@ import sort.MergeSort;
 import sort.QuitSort;
 import sort.SelectionSort;
 
+import java.util.Random;
+
 /**
  * author yg
  * description
@@ -48,7 +50,13 @@ public class SortTest {
     }
 
     private int[] getRandomArray() {
-        int[] ints = {3, 2, 6, 1, 2, 3, 10, -1};
+        Random random = new Random();
+        int length = random.nextInt(5) + 10;
+        int[] ints = new int[length];
+        for (int i = 0; i < length; i++) {
+            ints[i] = random.nextInt(15);
+        }
+        System.err.println(JSONObject.toJSONString(ints));
         return ints;
     }
 
