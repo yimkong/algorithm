@@ -2,7 +2,7 @@ package sort;
 
 /**
  * author yg
- * description 归并排序
+ * description 归并排序 TODO bug
  * date 2019/2/4
  */
 public class MergeSort {
