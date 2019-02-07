@@ -54,7 +54,7 @@ public class SortTest {
         int length = random.nextInt(5) + 10;
         int[] ints = new int[length];
         for (int i = 0; i < length; i++) {
-            ints[i] = random.nextInt(15);
+            ints[i] = random.nextInt(15) - 6;
         }
         System.err.println(JSONObject.toJSONString(ints));
         return ints;
