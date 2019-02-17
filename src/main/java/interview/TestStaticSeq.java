@@ -2,7 +2,7 @@ package interview;
 
 /**
  * author yg
- * description result:静态代码块优先执行
+ * description result:静态代码块优先执行,且只执行一次
  * init seq b
  * init seq d
  * init seq a
