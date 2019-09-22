@@ -6,6 +6,8 @@ import java.util.concurrent.CyclicBarrier;
 /**
  * author yg
  * description
+ * 此并发类用处：多线程并发执行并阻塞 当计数到对应数量的线程都await后,执行传入CyclicBarrier的barrierAction，同时唤醒所有正在等待的线程
+ * 感觉没啥用 要阻塞很多线程
  * date 2019/9/22
  */
 public class CyclicBarrierTest {
