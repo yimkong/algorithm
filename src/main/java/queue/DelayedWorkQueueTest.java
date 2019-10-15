@@ -1,7 +1,5 @@
 package queue;
 
-import com.alibaba.fastjson.JSONObject;
-
 /**
  * author yg
  * description
