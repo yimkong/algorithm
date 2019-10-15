@@ -1,5 +1,7 @@
 package queue;
 
+import lombok.ToString;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
@@ -15,6 +17,7 @@ import static java.util.concurrent.TimeUnit.NANOSECONDS;
  * description
  * date 2019/10/15
  */
+@ToString
 public class DelayedWorkQueue {
     Element[] queue = new Element[16];
     int size = 0;
@@ -25,7 +28,7 @@ public class DelayedWorkQueue {
     void siftUp(int k, Element key) {
         while (k > 0) {
             int parent = (k - 1) >>> 1;
-            Element e = queue[k];
+            Element e = queue[parent];
             if (key.compareTo(e) > 0) {
                 break;
             }
