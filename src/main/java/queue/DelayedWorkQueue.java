@@ -29,7 +29,7 @@ public class DelayedWorkQueue {
         while (k > 0) {
             int parent = (k - 1) >>> 1;
             Element e = queue[parent];
-            if (key.compareTo(e) > 0) {
+            if (key.compareTo(e) >= 0) {
                 break;
             }
             queue[k] = e;

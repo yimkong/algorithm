@@ -14,22 +14,20 @@ import java.util.concurrent.atomic.AtomicLong;
 @ToString
 public class Element implements Delayed {
     int index;
-    int delay;
+    long delay;
     final long sequenceNumber;
     static final AtomicLong sequencer = new AtomicLong();
+    int signal;
 
     public Element(int delay) {
-        this.delay = delay;
+        signal = delay;
+        this.delay = System.currentTimeMillis() + delay * 1000;
         this.sequenceNumber = sequencer.getAndIncrement();
-    }
-
-    public int compareTo(Element o2) {
-        return index - o2.index;
     }
 
     @Override
     public long getDelay(TimeUnit unit) {
-        return delay;
+        return delay- System.currentTimeMillis() ;
     }
 
     @Override
@@ -38,13 +36,14 @@ public class Element implements Delayed {
             return 0;
         }
         long delay = o.getDelay(TimeUnit.SECONDS);
-        if (this.delay == delay) {
+        long thisDelay = this.getDelay(TimeUnit.SECONDS);
+        if (thisDelay == delay) {
             if (sequenceNumber < ((Element) o).sequenceNumber) {
                 return -1;
             } else {
                 return 1;
             }
         }
-        return this.delay - delay > 0 ? 1 : -1;
+        return thisDelay - delay > 0 ? 1 : -1;
     }
 }
