@@ -49,6 +49,11 @@ public class JavassistEnhanser<T> {
         ConstPool cp = enhancedClz.getClassFile2().getConstPool();
         String desc = Descriptor.ofMethod(CtClass.voidType, parameters);
         MethodInfo methodInfo = new MethodInfo(cp, mname, desc);
+        //增加注解
+//        AnnotationsAttribute annoAttr = new AnnotationsAttribute(cp, AnnotationsAttribute.visibleTag);
+//        javassist.bytecode.annotation.Annotation annot = new javassist.bytecode.annotation.Annotation(JsonIgnore.class.getName(), cp);
+//        annoAttr.addAnnotation(annot);
+//        methodInfo.addAttribute(annoAttr);
         // 创建方法对象
         CtMethod method = CtMethod.make(methodInfo, enhancedClz);
         method.setBody("{" + //
