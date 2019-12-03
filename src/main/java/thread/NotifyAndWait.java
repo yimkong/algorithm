@@ -6,8 +6,8 @@ package thread;
  * date 2019/1/30
  */
 public class NotifyAndWait {
-    static Object obj = new Object();
-    static volatile int i = 1;
+    private static final Object obj = new Object();
+    private static volatile int i = 1;
 
     public static void main(String[] args) {
 
