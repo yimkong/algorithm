@@ -15,7 +15,7 @@ package problems;
  */
 public class ReverseList {
     //通过俩个指针的方式反转链表顺序
-    public ListNode solution1(ListNode head) {
+    public static ListNode solution1(ListNode head) {
         ListNode pre = null;
         ListNode cur = head;
         ListNode tmp;
@@ -30,14 +30,51 @@ public class ReverseList {
         }
         return pre;
     }
+
     //递归
-    public ListNode solution2(ListNode head) {
+    public static ListNode solution2(ListNode head) {
         //递归终止条件是当前为空，或者下一个节点为空
-        if(head==null || head.next==null) {
+        if (head.next == null) {
             return head;
         }
         //这里的cur就是最后一个节点
         ListNode cur = solution2(head.next);
+        //对最后一个节点追加节点
+        ListNode temp = cur;
+        while (temp.next != null) {
+            temp = temp.next;
+        }
+        temp.next = head;
+        //断掉当前这个节点和下一个节点的关系防止死循环
+        head.next = null;
+        //每层递归函数都返回cur，也就是最后一个节点
+        return cur;
+    }
+
+    //从最后的栈帧开始理解
+    //           head cur
+    //    1->2->3->4->5
+    //           head cur
+    //    1->2->3->4<-5
+    //        head    cur
+    //    1->2->3->4<-5
+    //        head    cur
+    //    1->2->3<-4<-5
+    //      head      cur
+    //    1->2->3<-4<-5
+    //      head      cur
+    //    1->2<-3<-4<-5
+    //   head         cur
+    //    1->2<-3<-4<-5
+    //   head         cur
+    //    1<-2<-3<-4<-5
+    public static ListNode solution3(ListNode head) {
+        //递归终止条件是当前为空，或者下一个节点为空
+        if (head == null || head.next == null) {
+            return head;
+        }
+        //这里的cur就是最后一个节点
+        ListNode cur = solution3(head.next);
         //这里请配合动画演示理解
         //如果链表是 1->2->3->4->5，那么此时的cur就是5
         //而head是4，head的下一个是5，下下一个是空
@@ -47,15 +84,5 @@ public class ReverseList {
         head.next = null;
         //每层递归函数都返回cur，也就是最后一个节点
         return cur;
-    }
-
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
     }
 }
