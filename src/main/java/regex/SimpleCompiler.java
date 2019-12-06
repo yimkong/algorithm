@@ -1,5 +1,7 @@
 package regex;
 
+import java.io.InputStream;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 /**
@@ -23,5 +25,17 @@ public class SimpleCompiler {
             }
         }
         return str;
+    }
+
+    public static void main(String[] args) {
+        while (true) {
+            InputStream in = System.in;
+            Scanner scanner=new Scanner(in);
+            String next = scanner.next();
+            Pattern abc = getLikePattern(next);
+//            Pattern abc = Pattern.compile(next);
+            boolean asdf = abc.matcher("asdf").matches();
+            System.err.println(asdf);
+        }
     }
 }
