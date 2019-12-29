@@ -6,7 +6,7 @@ import java.net.Socket;
 
 /**
  * author yg
- * description
+ * description 阻塞式io
  * date 2019/12/22
  */
 public class TimeServer {
