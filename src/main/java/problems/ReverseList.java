@@ -16,6 +16,9 @@ package problems;
 public class ReverseList {
     //通过俩个指针的方式反转链表顺序
     public static ListNode solution1(ListNode head) {
+        if (head == null) {
+            return null;
+        }
         ListNode pre = null;
         ListNode cur = head;
         ListNode tmp;
@@ -33,11 +36,14 @@ public class ReverseList {
 
     //递归
     public static ListNode solution2(ListNode head) {
+        if (head == null) {
+            return null;
+        }
         //递归终止条件是当前为空，或者下一个节点为空
         if (head.next == null) {
             return head;
         }
-        //这里的cur就是最后一个节点
+        //这里的cur就是原链表的最后一个节点,之后会成为新链表的头节点
         ListNode cur = solution2(head.next);
         //对最后一个节点追加节点
         ListNode temp = cur;
@@ -51,7 +57,7 @@ public class ReverseList {
         return cur;
     }
 
-    //从最后的栈帧开始理解
+    //每一次递归都修改当前节点的下一个节点的next引用为自己
     //           head cur
     //    1->2->3->4->5
     //           head cur
@@ -69,8 +75,11 @@ public class ReverseList {
     //   head         cur
     //    1<-2<-3<-4<-5
     public static ListNode solution3(ListNode head) {
+        if (head == null) {
+            return null;
+        }
         //递归终止条件是当前为空，或者下一个节点为空
-        if (head == null || head.next == null) {
+        if (head.next == null) {
             return head;
         }
         //这里的cur就是最后一个节点
