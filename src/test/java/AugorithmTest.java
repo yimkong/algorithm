@@ -1,8 +1,7 @@
 import org.junit.Test;
+import problems.FindTheNode;
 import problems.ListNode;
 import problems.ReverseList;
-
-import java.util.Random;
 
 /**
  * author yg
@@ -25,20 +24,29 @@ public class AugorithmTest {
         System.err.println(listNode3);
     }
 
-    private ListNode ranListNode() {
-        ListNode head = null;
-        ListNode temp = null;
-        int count = 0;
-        while (count++ < 6) {
-            if (head == null) {
-                head = new ListNode(count);
-                temp = head;
-            } else {
-                temp.next = new ListNode(count);
-                temp = temp.next;
-            }
-        }
-        return head;
-
+    @Test
+    public void testFindTheNode() {
+        ListNode listNode = ranListNode();
+        System.err.println(listNode);
+        ListNode result = FindTheNode.find(listNode, 3);
+        ListNode result1 = FindTheNode.find(listNode, 0);
+        System.err.println(result);
+        System.err.println(result1);
     }
-}
+        private ListNode ranListNode () {
+            ListNode head = null;
+            ListNode temp = null;
+            int count = 0;
+            while (count++ < 6) {
+                if (head == null) {
+                    head = new ListNode(count);
+                    temp = head;
+                } else {
+                    temp.next = new ListNode(count);
+                    temp = temp.next;
+                }
+            }
+            return head;
+
+        }
+    }
