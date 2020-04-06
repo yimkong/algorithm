@@ -21,7 +21,4 @@ public class TrailingZeros {
         return ans;
     }
 
-        public static void main (String[]args){
-            System.out.println(compute(100));
-        }
-    }
+}
