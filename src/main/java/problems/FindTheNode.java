@@ -15,7 +15,7 @@ public class FindTheNode {
         }
         int begin = k - 1;
         ListNode tmp = listNode;
-        //找到第k-1个节点
+        //找到第k个节点,走k-1步
         for (int i = 0; i < begin; i++) {
             if (tmp.next == null) {//链表长度不够
                 return listNode;
