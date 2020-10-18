@@ -1,7 +1,5 @@
 import org.junit.Test;
-import problems.FindTheNode;
-import problems.ListNode;
-import problems.ReverseList;
+import problems.*;
 
 /**
  * author yg
@@ -33,20 +31,38 @@ public class AugorithmTest {
         System.err.println(result);
         System.err.println(result1);
     }
-        private ListNode ranListNode () {
-            ListNode head = null;
-            ListNode temp = null;
-            int count = 0;
-            while (count++ < 6) {
-                if (head == null) {
-                    head = new ListNode(count);
-                    temp = head;
-                } else {
-                    temp.next = new ListNode(count);
-                    temp = temp.next;
-                }
-            }
-            return head;
 
+    private ListNode ranListNode() {
+        ListNode head = null;
+        ListNode temp = null;
+        int count = 0;
+        while (count++ < 6) {
+            if (head == null) {
+                head = new ListNode(count);
+                temp = head;
+            } else {
+                temp.next = new ListNode(count);
+                temp = temp.next;
+            }
+        }
+        return head;
+    }
+
+    @Test
+    public void testSimpleArraySum() {
+        int[] data = new int[]{2, 5, 6, 1, 4};
+        int[] ints = SimpleArraySum.runningSum(data);
+        for (int i = 0; i < ints.length; i++) {
+            System.err.println(ints[i]);
         }
     }
+
+    @Test
+    public void testRearrangeArray(){
+        int[] data = new int[]{1,2,3,4,4,3,2,1};
+        int[] shuffle = RearrangeArray.shuffle(data, 4);
+        for (int i : shuffle) {
+            System.err.println(i);
+        }
+    }
+}
