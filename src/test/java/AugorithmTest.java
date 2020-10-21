@@ -65,4 +65,10 @@ public class AugorithmTest {
             System.err.println(i);
         }
     }
+
+    @Test
+    public void test() {
+        int i = AccumulateSum.subtractProductAndSum(705);
+        System.err.println(i);
+    }
 }
