@@ -58,8 +58,8 @@ public class AugorithmTest {
     }
 
     @Test
-    public void testRearrangeArray(){
-        int[] data = new int[]{1,2,3,4,4,3,2,1};
+    public void testRearrangeArray() {
+        int[] data = new int[]{1, 2, 3, 4, 4, 3, 2, 1};
         int[] shuffle = RearrangeArray.shuffle(data, 4);
         for (int i : shuffle) {
             System.err.println(i);
@@ -67,8 +67,16 @@ public class AugorithmTest {
     }
 
     @Test
-    public void test() {
+    public void testSubtractProductAndSum() {
         int i = AccumulateSum.subtractProductAndSum(705);
         System.err.println(i);
+    }
+
+    @Test
+    public void testCreateTargetArray() {
+        int[] ints1 = {7, 1, 3, 4, 5};
+        int[] ints2 = {0, 3, 2, 4, 4};
+        int[] targetArray2 = CreateTargetArray.createTargetArray1(ints1, ints2);
+        System.err.println();
     }
 }
