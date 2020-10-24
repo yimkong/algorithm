@@ -79,4 +79,9 @@ public class AugorithmTest {
         int[] targetArray2 = CreateTargetArray.createTargetArray1(ints1, ints2);
         System.err.println();
     }
+
+    @Test
+    public void SumOddLengthSubarrays() {
+        SumOddLengthSubarrays.sumOddLengthSubarrays1(new int[]{1, 4, 2, 5, 3});
+    }
 }
