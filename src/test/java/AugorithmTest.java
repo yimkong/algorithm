@@ -84,4 +84,16 @@ public class AugorithmTest {
     public void SumOddLengthSubarrays() {
         SumOddLengthSubarrays.sumOddLengthSubarrays1(new int[]{1, 4, 2, 5, 3});
     }
+
+    @Test
+    public void DiagonalSum() {
+        int[][] t = new int[3][3];
+        t[0] = new int[]{1, 2, 3};
+        t[1] = new int[]{4, 5, 6};
+        t[2] = new int[]{7, 8, 9};
+        DiagonalSum.diagonalSum(t);
+        int[][] t1 = new int[1][1];
+        t1[0] = new int[]{5};
+        DiagonalSum.diagonalSum(t1);
+    }
 }
