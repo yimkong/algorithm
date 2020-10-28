@@ -96,4 +96,10 @@ public class AugorithmTest {
         t1[0] = new int[]{5};
         DiagonalSum.diagonalSum(t1);
     }
+
+    @Test
+    public void SmallerNumbersThanCurrent() {
+        int[] res = {8,1,2,2,3};
+        SmallerNumbersThanCurrent.smallerNumbersThanCurrent1(res);
+    }
 }
