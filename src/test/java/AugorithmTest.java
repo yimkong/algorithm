@@ -102,4 +102,13 @@ public class AugorithmTest {
         int[] res = {8,1,2,2,3};
         SmallerNumbersThanCurrent.smallerNumbersThanCurrent1(res);
     }
+
+    @Test
+    public void getDecimalValue() {
+        ListNode listNode = new ListNode(1);
+        listNode.next=new ListNode(1);
+        listNode.next.next = new ListNode(0);
+        GetDecimalValue.getDecimalValue2(listNode);
+    }
+
 }
