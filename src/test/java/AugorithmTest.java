@@ -111,4 +111,9 @@ public class AugorithmTest {
         GetDecimalValue.getDecimalValue2(listNode);
     }
 
+    @Test
+    public void calRapidCalculate(){
+        RapidCalculate.calculate("AB");
+    }
+
 }
