@@ -116,4 +116,8 @@ public class AugorithmTest {
         RapidCalculate.calculate("AB");
     }
 
+    @Test
+    public void balancedStringSplit() {
+        BalancedStringSplit.balancedStringSplit("RLRRRLLRLLRLRL");
+    }
 }
