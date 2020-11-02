@@ -99,25 +99,31 @@ public class AugorithmTest {
 
     @Test
     public void SmallerNumbersThanCurrent() {
-        int[] res = {8,1,2,2,3};
+        int[] res = {8, 1, 2, 2, 3};
         SmallerNumbersThanCurrent.smallerNumbersThanCurrent1(res);
     }
 
     @Test
     public void getDecimalValue() {
         ListNode listNode = new ListNode(1);
-        listNode.next=new ListNode(1);
+        listNode.next = new ListNode(1);
         listNode.next.next = new ListNode(0);
         GetDecimalValue.getDecimalValue2(listNode);
     }
 
     @Test
-    public void calRapidCalculate(){
+    public void calRapidCalculate() {
         RapidCalculate.calculate("AB");
     }
 
     @Test
     public void balancedStringSplit() {
         BalancedStringSplit.balancedStringSplit("RLRRRLLRLLRLRL");
+    }
+
+    @Test
+    public void countGoodTriplets() {
+        int[] arr = {3, 0, 1, 1, 9, 7};
+        CountGoodTriplets.countGoodTriplets(arr, 7, 2, 3);
     }
 }
