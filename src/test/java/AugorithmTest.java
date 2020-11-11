@@ -126,4 +126,14 @@ public class AugorithmTest {
         int[] arr = {3, 0, 1, 1, 9, 7};
         CountGoodTriplets.countGoodTriplets(arr, 7, 2, 3);
     }
+
+    @Test
+    public void testDeleteMiddleNode() {
+        ListNode listNode = new ListNode(2);
+        listNode.next = new ListNode(0);
+        listNode.next.next = new ListNode(1);
+        listNode.next.next.next = new ListNode(3);
+        DeleteMiddleNode.deleteNode2(listNode);
+        System.err.println(listNode);
+    }
 }
