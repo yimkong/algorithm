@@ -136,4 +136,15 @@ public class AugorithmTest {
         DeleteMiddleNode.deleteNode2(listNode);
         System.err.println(listNode);
     }
+
+    @Test
+    public void binaryTreeMaxDepth() {
+        TreeNode treeNode = new TreeNode(3);
+        treeNode.setLeft(new TreeNode(9));
+        TreeNode right = new TreeNode(20);
+        treeNode.setRight(right);
+        right.setLeft(new TreeNode(15));
+        right.setRight(new TreeNode(7));
+        BinaryTreeMaxDepth.maxDepth(treeNode);
+    }
 }
