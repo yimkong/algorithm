@@ -147,4 +147,11 @@ public class AugorithmTest {
         right.setRight(new TreeNode(7));
         BinaryTreeMaxDepth.maxDepth(treeNode);
     }
+
+    @Test
+    public void canCompleteCircuitTest() {
+        int[] arr1 ={3,1,1};
+        int[] arr2 ={1,2,2};
+        CanCompleteCircuit.canCompleteCircuit(arr1, arr2);
+    }
 }
