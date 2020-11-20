@@ -154,4 +154,13 @@ public class AugorithmTest {
         int[] arr2 ={1,2,2};
         CanCompleteCircuit.canCompleteCircuit(arr1, arr2);
     }
+
+    @Test
+    public void insertionSortList() {
+        ListNode listNode = new ListNode(4);
+        listNode.next = new ListNode(2);
+        listNode.next.next = new ListNode(1);
+        listNode.next.next.next = new ListNode(3);
+        InsertionSortList.insertionSortList(listNode);
+    }
 }
