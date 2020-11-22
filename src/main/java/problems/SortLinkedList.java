@@ -73,7 +73,7 @@ public class SortLinkedList {
         return listNode;
     }
 
-    //复杂度Ologn
+    //归并排序复杂度Ologn
     public ListNode sortList1(ListNode head) {
         return sortList(head, null);
     }
