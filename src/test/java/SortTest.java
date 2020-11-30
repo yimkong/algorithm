@@ -1,3 +1,4 @@
+import books.algs4.Shell;
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Assert;
 import org.junit.Before;
@@ -47,6 +48,16 @@ public class SortTest {
         int[] ints = getRandomArray();
         QuitSort.sort(ints);
         check(ints);
+    }
+
+    @Test
+    public void shellTest() {
+        int[] randomArray = getRandomArray();
+        Integer[] res = new Integer[randomArray.length];
+        for (int i = 0; i < randomArray.length; i++) {
+            res[i] = randomArray[i];
+        }
+        Shell.sort(res);
     }
 
     private int[] getRandomArray() {

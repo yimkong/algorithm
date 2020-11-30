@@ -3,6 +3,7 @@ package books.algs4;
 /**
  * author yg
  * description
+ * 思想：使数组中任意间隔为h的元素都是有序的
  * date 2020/11/5
  */
 public class Shell {
