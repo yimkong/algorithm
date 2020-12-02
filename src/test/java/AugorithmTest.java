@@ -32,6 +32,15 @@ public class AugorithmTest {
         System.err.println(result1);
     }
 
+    @Test
+    public void testLongestCommonPrefix() {
+        String[] str = {"flower", "flow", "flight"};
+        String[] str1 = {"dog", "racecar", "car"};
+        String[] str2 = {"ab", "a"};
+//        LongestCommonPrefix.longestCommonPrefix(str2);
+        LongestCommonPrefix.longestCommonPrefix1(str1);
+    }
+
     private ListNode ranListNode() {
         ListNode head = null;
         ListNode temp = null;
@@ -150,8 +159,8 @@ public class AugorithmTest {
 
     @Test
     public void canCompleteCircuitTest() {
-        int[] arr1 ={3,1,1};
-        int[] arr2 ={1,2,2};
+        int[] arr1 = {3, 1, 1};
+        int[] arr2 = {1, 2, 2};
         CanCompleteCircuit.canCompleteCircuit(arr1, arr2);
     }
 
