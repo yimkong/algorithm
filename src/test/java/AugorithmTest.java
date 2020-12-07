@@ -172,4 +172,10 @@ public class AugorithmTest {
         listNode.next.next.next = new ListNode(3);
         InsertionSortList.insertionSortList(listNode);
     }
+
+    @Test
+    public void replaceElements() {
+        int[] arr1 = {17,18,5,4,6,1};
+        ReplaceElements.replaceElements(arr1);
+    }
 }
