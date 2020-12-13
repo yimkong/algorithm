@@ -1,5 +1,10 @@
+import dynamicprograme.CountCoin;
 import org.junit.Test;
 import problems.*;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * author yg
@@ -131,12 +136,6 @@ public class AugorithmTest {
     }
 
     @Test
-    public void countGoodTriplets() {
-        int[] arr = {3, 0, 1, 1, 9, 7};
-        CountGoodTriplets.countGoodTriplets(arr, 7, 2, 3);
-    }
-
-    @Test
     public void testDeleteMiddleNode() {
         ListNode listNode = new ListNode(2);
         listNode.next = new ListNode(0);
@@ -175,7 +174,21 @@ public class AugorithmTest {
 
     @Test
     public void replaceElements() {
-        int[] arr1 = {17,18,5,4,6,1};
+        int[] arr1 = {17, 18, 5, 4, 6, 1};
         ReplaceElements.replaceElements(arr1);
+    }
+
+    @Test
+    public void testCountGoodTriplets() {
+        int[] arr = {3, 0, 1, 1, 9, 7};
+        CountGoodTriplets.countGoodTriplets(arr, 7, 2, 3);
+    }
+
+    @Test
+    public void testCountCoin() {
+        Integer[] arr = {3,2,5};
+        List<Integer> integers = Arrays.asList(arr);
+        int i = CountCoin.countCoin2(integers, 11);
+        System.err.println(i);
     }
 }
