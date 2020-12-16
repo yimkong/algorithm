@@ -2,7 +2,6 @@ import dynamicprograme.CountCoin;
 import org.junit.Test;
 import problems.*;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -186,9 +185,17 @@ public class AugorithmTest {
 
     @Test
     public void testCountCoin() {
-        Integer[] arr = {3,2,5};
+        Integer[] arr = {3, 2, 5};
         List<Integer> integers = Arrays.asList(arr);
         int i = CountCoin.countCoin2(integers, 11);
         System.err.println(i);
+    }
+
+    @Test
+    public void testCountNegatives() {
+        int[][] arr = {{4, 3, 2, -1}, {3, 2, 1, -1}, {1, 1, -1, -2}, {-1, -1, -2, -3}};
+//        int[][] arr = {{4, 3, 2, 1}, {3, 2, 1, -1}, {1, 1, -1, -2}, {-1, -1, -2, -3},{-1, -1, -2, -3}};
+        CountNegatives.countNegatives(arr);
+        CountNegatives.countNegatives1(arr);
     }
 }
