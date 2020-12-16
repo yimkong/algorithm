@@ -79,7 +79,6 @@ public class CountNegatives {
             for (i = pos; i >= 0; --i) {//从尾部开始找正数，只要找到正数，则右边的都是负数
                 if (x[i] >= 0) {
                     if (i + 1 < m) {//防止数组超标
-//                        pos = i + 1;//往右移动一位，重新回到
                         num = num + (m - i - 1);//计算负数
                     }
                     break;
