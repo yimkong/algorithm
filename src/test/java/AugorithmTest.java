@@ -198,4 +198,10 @@ public class AugorithmTest {
         CountNegatives.countNegatives(arr);
         CountNegatives.countNegatives1(arr);
     }
+
+    @Test
+    public void testOddCell() {
+        int[][] arr = {{0, 1}, {1, 1}};
+        OddCells.oddCells2(2, 3, arr);
+    }
 }
