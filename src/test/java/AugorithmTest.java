@@ -1,4 +1,5 @@
 import dynamicprograme.CountCoin;
+import dynamicprograme.MinDistance;
 import org.junit.Test;
 import problems.*;
 
@@ -203,5 +204,13 @@ public class AugorithmTest {
     public void testOddCell() {
         int[][] arr = {{0, 1}, {1, 1}};
         OddCells.oddCells2(2, 3, arr);
+    }
+
+    @Test
+    public void testMinDistance() {
+//        MinDistance.minDistance("horse", "ros");
+//        MinDistance.minDistance("a", "ab");
+//        MinDistance.minDistance("a", "b");
+        MinDistance.minDistance2("distance", "springbok");
     }
 }
