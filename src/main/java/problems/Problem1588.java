@@ -1,5 +1,7 @@
 package problems;
 
+import java.util.stream.IntStream;
+
 /**
  * 给你一个正整数数组 arr ，请你计算所有可能的奇数长度子数组的和。
  *
@@ -48,6 +50,7 @@ package problems;
 public class Problem1588 {
     //当子数组为奇数数组时，扣去当前i占据一位，那么左边和右边的个数，要么都为奇数，要么都为偶数，分两种情况考虑，分别计算俩边的奇偶的个数
     //其实就是计算每个数在各个子数组可能出现的次数，然后就可以知道该数在子数组的总和
+    //复杂度为O(n)
     public int sumOddLengthSubarrays(int[] arr) {
         int n = arr.length, sum = 0;
         for(int i = 0; i< n; i++){
@@ -60,4 +63,35 @@ public class Problem1588 {
         }
         return sum;
     }
+
+    //暴力枚举，复杂度为O(n^3)
+    public int sumOddLengthSubarrays1(int[] arr) {
+        int sum = 0, n = arr.length;
+        for (int start = 0; start < n; start++) {
+            for (int length = 1; start + length <= n; length+=2) {
+                int end = start + length - 1;
+                for (int i = start; i <= end; i++) {
+                    sum += arr[i];
+                }
+            }
+        }
+        return sum;
+    }
+
+    //前缀和，复杂度O(n^2)
+    public int sumOddLengthSubarrays2(int[] arr) {
+        int[] record = new int[arr.length + 1];//每个index代表是0 到 index-1 的数组数的和
+        for (int i = 0; i < arr.length; i++) {
+            record[i+1] = arr[i] + record[i];
+        }
+        int sum = 0;
+        for (int start = 0; start < arr.length; start++) {
+            for (int length = 1; start + length <= arr.length; length += 2) {
+                int end = start + length - 1 ;
+                sum += record[end+1] -record[start];
+            }
+        }
+        return sum;
+    }
+
 }
