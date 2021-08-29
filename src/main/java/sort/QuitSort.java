@@ -17,7 +17,7 @@ public class QuitSort {
         if (right < left) {
             return;
         }
-        int i = left;
+        int i = left;//该指针指的数一直都是小于等于基准数
         int j = right;
         int base = arr[left];
         while (i != j) {
@@ -32,7 +32,7 @@ public class QuitSort {
             }
         }
         //最终将基准数归位
-        change(arr, left, i);
+        change(arr, left, i);//将小于等于基准数的i指向的数跟基准数调换
         //递归
         qsort(arr, left, i - 1);
         qsort(arr, i + 1, right);
