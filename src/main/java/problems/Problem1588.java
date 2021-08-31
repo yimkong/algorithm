@@ -56,9 +56,9 @@ public class Problem1588 {
         for(int i = 0; i< n; i++){
             int leftCount = i,rightCount = n - i -1;
             //俩边都是奇数
-            int oddL = (leftCount+1)/2, oddR = (rightCount+1)/2;
+            int oddL = (leftCount+1)/2, oddR = (rightCount+1)/2; // 每个奇数的个数等于后一个偶数除以2
             //俩边都是偶数
-            int evenL = leftCount/2 + 1,evenR = rightCount/2 + 1;
+            int evenL = leftCount/2 + 1,evenR = rightCount/2 + 1; //每个偶数的个数等于 该数除以2加1是因为要算上0，不算0的话就不用+1，因为会自动约去奇数的余数
             sum += arr[i] * (oddL * oddR + evenL * evenR);
         }
         return sum;
