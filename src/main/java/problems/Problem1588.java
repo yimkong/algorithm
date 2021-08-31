@@ -78,7 +78,7 @@ public class Problem1588 {
         return sum;
     }
 
-    //前缀和，复杂度O(n^2)
+    //前缀和，复杂度O(n^2),通过该方式可以随便求某一段连续子数组的累和，例如求 n 下标到 m 下标的累和，则是arr[m+1]-arr[n]
     public int sumOddLengthSubarrays2(int[] arr) {
         int[] record = new int[arr.length + 1];//每个index代表是0 到 index-1 的数组数的和
         for (int i = 0; i < arr.length; i++) {
