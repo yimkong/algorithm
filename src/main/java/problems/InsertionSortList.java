@@ -76,4 +76,26 @@ public class InsertionSortList {
         }
         return first;
     }
+
+    public static ListNode insertionSortList2(ListNode head) {
+        ListNode dum = new ListNode();//用dum来连接第一个节点，以便于统一修改节点包括head
+        dum.next = head;
+        ListNode lastSorted = head,cur = head.next;//双指针，前一个为lastSorted后一个为cur
+        while (lastSorted.next != null){
+            if(lastSorted.val <= cur.val){//有顺序的话往后顺延
+                lastSorted = lastSorted.next;
+            }else {
+                ListNode prev = dum;
+                while (prev.next.val <= cur.val){//找到比cur节点大的节点的前一个节点
+                    prev = prev.next;
+                }
+                //修改引用
+                lastSorted.next = cur.next;
+                cur.next = prev.next;
+                prev.next = cur;
+            }
+            cur = lastSorted.next;
+        }
+        return dum.next;
+    }
 }
