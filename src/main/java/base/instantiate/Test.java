@@ -1,5 +1,7 @@
 package base.instantiate;
 
+import java.util.Collections;
+
 /**
  * author yg
  * description 虚拟机规范对象实例化场景
@@ -20,5 +22,6 @@ public class Test {
         //final的常量在编译器就存入了调用类Test的常量池，本质上没有引用到该类，因此调用时不会导致初始化
         //该常量SubClass.ID会通过编译期的传播优化存入了Test类的常量池里了，实际上Test类的class文件中并没有SubClass类的符号引用，因此这俩个类编译成class后就没有联系了
         int id = SubClass.ID;
+
     }
 }
