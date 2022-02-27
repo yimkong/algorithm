@@ -5,7 +5,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 2022/2/27
- * desc
+ * desc 控制同时访问的线程数量
  */
 public class TestSemaphore {
     static Semaphore semaphore = new Semaphore(5);
