@@ -20,7 +20,7 @@ public class TestSemaphore {
                         semaphore.acquire();
                         try{
                             System.err.println("yes i am "+ a.getAndIncrement());
-                            Thread.sleep(5000);
+                            Thread.sleep(50000);
                         }finally {
                             semaphore.release();
                         }
