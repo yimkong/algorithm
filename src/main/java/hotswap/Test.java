@@ -8,7 +8,7 @@ import java.util.Scanner;
  * description
  * date 2019/12/4
  */
-public class Test {
+public class Test<T> {
     public static void main(String[] args) throws FileNotFoundException {
 //        PropertyConfigurator.configure(new Test().getClass().getClassLoader().getResource("log4j.properties").getPath());
 //        SimpleRunner simpleRunner = new SimpleRunner();
@@ -18,5 +18,13 @@ public class Test {
 //            String s = scanner.nextLine();
 //            simpleRunner.run();
 //        }
+        Test<Integer> t = new Test<>();
+        t.test();
+    }
+
+    Test<T> [] i;
+
+    private void test(){
+        i = new Test[3];
     }
 }
