@@ -19,3 +19,11 @@ class Solution:
         if not node: return level
         level = level + 1
         return max(self.go(node.left, level), self.go(node.right, level))
+
+class Solution:
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if not root: return 0
+        left = self.minDepth(root.left)
+        right = self.minDepth(root.right)
+        # 排除只有左边或者右边的情况，其他情况就取左右俩边最小深度+1
+        return left + right + 1 if not left or not right else min(left, right) + 1
