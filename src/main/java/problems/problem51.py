@@ -41,3 +41,22 @@ class Solution:
         result = []
         _DFS([], [], [])
         return [[ "." * q + "Q" + "." * (n - q - 1) for q in p] for p in result]
+# 位运算
+class Solution:
+    def totalNQueens(self, n: int) -> int:
+        self.count = 0
+        self._DFS(n, 0, 0, 0, 0)
+        return self.count
+
+    def _DFS(self, n, row, col, pie, na) -> None:
+        if row >= n:
+            self.count += 1
+            return
+        # 得到所有空位
+        bits = (~(col | pie | na)) & ((1 << n) - 1)
+        while bits:
+            # 得到最右边的1
+            p = bits & -bits
+            self._DFS(n, row + 1, col | p, (pie | p) << 1, (na | p) >> 1)
+            # 去掉最右边的1
+            bits = bits & (bits - 1)
